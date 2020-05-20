@@ -7,12 +7,39 @@
 //
 
 import UIKit
+//import XKLocationManagerSwift
 
 class ViewController: UIViewController {
+    
+    let manager = XKLocationManagerSwift.xk_defaultManager()
 
+    @IBOutlet weak var textLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        manager.xk_requestAuthorization(type: .whenInUse)
+        
+        manager.xk_authorizationStatusDidChange {
+            [unowned self]
+            (manager, status) in
+            
+            self.manager.xk_start()
+        }
+        
+        if manager.xk_canLocate() {
+            manager.xk_start()
+        }
+        
+        manager.xk_didFinishLocate {
+            [unowned self]
+            (location, coordinate, placemark, city) in
+            
+            self.textLabel.text = city
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

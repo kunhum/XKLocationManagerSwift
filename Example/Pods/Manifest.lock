@@ -1,0 +1,16 @@
+PODS:
+  - XKLocationManagerSwift (1.0.0)
+
+DEPENDENCIES:
+  - XKLocationManagerSwift (from `../`)
+
+EXTERNAL SOURCES:
+  XKLocationManagerSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XKLocationManagerSwift: 4d48f17d849019a122f091f9f8fdb1c5da5606f2
+
+PODFILE CHECKSUM: 8e1d9d827abc2680d67de37e82fccf0ee56ced33
+
+COCOAPODS: 1.9.1
