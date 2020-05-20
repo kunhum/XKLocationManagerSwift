@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XKLocationManagerSwift_Example' do
+  pod 'XKLocationManagerSwift', :path => '../'
+
+  target 'XKLocationManagerSwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
